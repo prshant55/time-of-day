@@ -90,14 +90,33 @@ let myDate = new Date();
 let myHour = myDate.getHours();
 let myGreeting="";
 let myColor="";
-
-if(myHour > 12){
-    myGreeting = "Good Afternoon!";
+myHour=9;
+if(myHour >= 5 && myHour<12)
+{
+    myGreeting = "Good Morning!";
     myColor="red";
 }else{
    myGreeting = "Good Morning?";
    myColor="Blue";
 }
+
+
+
+
+
+if(myHour >= 5 && myHour <12){
+    alert('morning');
+}else{
+    alert('NOT morning');
+}
+
+
+
+
+
+
+
+
 
 document.getElementById('mydiv').innerHTML = myGreeting;
 document.body.style.backgroundColor=myColor;
