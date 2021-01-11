@@ -75,7 +75,7 @@
 	 <p>There is an image with a class of FLEXIBLE which is set to a max-width equal to the size of the image.  Simutaneously the class sets the image to a percentage width, allowing the image to flex in size.  The height is not changed, as this would skew the image.</p>
 	 <p>The LIST elements inside the NAV are displayed inline by setting the display to be inline-block.  Bullets are removed by setting the UL to display</p>
 	 <p>The FOOTER includes a clear:both to keep everything above it!</p>
-	  <img src="http://dummyimage.com/300x400" alt="Picture of Me!" class="flexible" />
+	  <img src="" alt="time of day week" id="mypic" class="flexible" />
      </main>
     <footer>
       <small>&copy; 2013, All Rights Reserved ~
@@ -86,29 +86,38 @@
 	<!-- END Footer -->
 	<script>
 
-let myDate = new Date();
-let myHour = myDate.getHours();
-let myGreeting="";
-let myColor="";
-myHour=9;
-if(myHour >= 5 && myHour<12)
-{
-    myGreeting = "Good Morning!";
-    myColor="red";
-}else{
-   myGreeting = "Good Morning?";
-   myColor="Blue";
-}
+	let myDate = new Date();
+	let myHour = myDate.getHours();
+	let myGreeting="";
+	let myColor="";
+	let myPic="images/";
+	myHour=9;
+	if(myHour >= 5 && myHour<12)
+	{
+		myGreeting = "Good Morning!";
+		myColor="blue";
+		myPic+="morning.jpg";
+	}
+	else if(myHour >= 12 && myHour< 17) {
+	myGreeting = "Good Afternoon?";
+	myColor="red";
+	myPic+="afternoon.jpg";
+	}
+	else if(myHour >= 17 && myHour< 23) {
+	myGreeting = "Good evening?";
+	myColor="orange";
+	myPic+="evening.jpg";
+	}
+	else {
+	myGreeting = "Good night?";
+	myColor="Blue";
+	myPic+="night.pic";
+	}
 
 
 
 
 
-if(myHour >= 5 && myHour <12){
-    alert('morning');
-}else{
-    alert('NOT morning');
-}
 
 
 
@@ -118,8 +127,10 @@ if(myHour >= 5 && myHour <12){
 
 
 
-document.getElementById('mydiv').innerHTML = myGreeting;
-document.body.style.backgroundColor=myColor;
+	document.getElementById('mydiv').innerHTML = myGreeting;
+	document.body.style.backgroundColor=myColor;
+	document.getElementById("mypic").src = myPic;
+
 
 
 	</script>
